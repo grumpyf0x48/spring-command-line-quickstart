@@ -10,7 +10,7 @@ java-command-line-quickstart is a template repository to bootstrap a new Java co
 - Gradle 7.5.1 for build
 - Maven Central for dependencies
 - Picocli for command line arguments parsing
-- JUnit 5 for tests
+- JUnit 5 and Mockito for tests
 - GitHub workflow for running tests
 - EditorConfig for code formatting
 - Renovate for dependencies update

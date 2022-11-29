@@ -24,6 +24,10 @@ dependencies {
     testImplementation "org.mockito:mockito-core:${mockitoVersion}"
 }
 
+application {
+    mainClass = 'org.grumpyf0x48.application.Application'
+}
+
 java {
     toolchain {
         languageVersion = JavaLanguageVersion.of(17)
@@ -36,8 +40,4 @@ repositories {
 
 tasks.named('test') {
     useJUnitPlatform()
-}
-
-application {
-    mainClass = 'org.grumpyf0x48.application.Application'
 }

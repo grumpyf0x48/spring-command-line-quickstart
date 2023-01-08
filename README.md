@@ -2,7 +2,7 @@
 
 [![Build](https://github.com/grumpyf0x48/spring-command-line-quickstart/actions/workflows/gradle.yml/badge.svg)](https://github.com/grumpyf0x48/spring-command-line-quickstart/actions/workflows/gradle.yml)
 
-spring-command-line-quickstart is a template repository to bootstrap a new Java command line application using:
+**spring-command-line-quickstart** is a template repository to bootstrap a new Java command line application using:
 
 - Java 17
 - Spring Boot

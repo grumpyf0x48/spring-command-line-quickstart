@@ -1,4 +1,4 @@
-package org.grumpyf0x48.application.services;
+package org.grumpyf0x48.applicationName.services;
 
 import org.springframework.stereotype.Component;
 

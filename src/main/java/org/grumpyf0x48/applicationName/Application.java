@@ -1,4 +1,4 @@
-package org.grumpyf0x48.application;
+package org.grumpyf0x48.applicationName;
 
 import org.springframework.boot.Banner;
 import org.springframework.boot.SpringApplication;

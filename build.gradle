@@ -25,7 +25,7 @@ dependencies {
 }
 
 application {
-    mainClass = 'org.grumpyf0x48.application.Application'
+    mainClass = 'org.grumpyf0x48.applicationName.Application'
 }
 
 java {

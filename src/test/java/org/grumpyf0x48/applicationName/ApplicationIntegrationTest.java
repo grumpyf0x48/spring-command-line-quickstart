@@ -1,7 +1,7 @@
-package org.grumpyf0x48.application;
+package org.grumpyf0x48.applicationName;
 
-import org.grumpyf0x48.application.commands.Command;
-import org.grumpyf0x48.application.services.Service;
+import org.grumpyf0x48.applicationName.commands.Command;
+import org.grumpyf0x48.applicationName.services.Service;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;

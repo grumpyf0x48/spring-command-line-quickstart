@@ -1,7 +1,7 @@
-package org.grumpyf0x48.applicationName.commands;
+package org.grumpyf0x48.myapplication.commands;
 
 import lombok.RequiredArgsConstructor;
-import org.grumpyf0x48.applicationName.services.Service;
+import org.grumpyf0x48.myapplication.services.Service;
 import org.springframework.stereotype.Component;
 import picocli.CommandLine;
 

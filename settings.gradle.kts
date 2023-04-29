@@ -15,4 +15,4 @@ pluginManagement {
     }
 }
 
-rootProject.name = "spring-command-line-quickstart"
+rootProject.name = "myapplication"

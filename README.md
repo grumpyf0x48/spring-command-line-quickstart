@@ -7,7 +7,7 @@
 - Java 17
 - Spring Boot
 - Lombok to ease dependencies injection
-- Gradle 8 for build
+- Gradle 8 with Kotlin DSL for build
 - Maven Central for dependencies
 - Picocli for command line arguments parsing
 - JUnit 5 and Mockito for tests

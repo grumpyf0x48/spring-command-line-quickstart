@@ -24,7 +24,7 @@ dependencies {
 }
 
 application {
-    mainClass.set("org.grumpyf0x48.applicationName.Application")
+    mainClass.set("org.grumpyf0x48.myapplication.Application")
 }
 
 java {

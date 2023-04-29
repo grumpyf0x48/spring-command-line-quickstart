@@ -1,6 +1,6 @@
-package org.grumpyf0x48.applicationName.commands;
+package org.grumpyf0x48.myapplication.commands;
 
-import org.grumpyf0x48.applicationName.services.Service;
+import org.grumpyf0x48.myapplication.services.Service;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;

@@ -1,4 +1,4 @@
-package org.grumpyf0x48.applicationName.services;
+package org.grumpyf0x48.myapplication.services;
 
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;

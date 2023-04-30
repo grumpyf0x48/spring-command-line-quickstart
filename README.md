@@ -10,7 +10,8 @@
 - Gradle 8 with Kotlin DSL for build
 - Maven Central for dependencies
 - Picocli for command line arguments parsing
+- Picocli Code Generation for Bash completion script generation
 - JUnit 5 and Mockito for tests
-- GitHub workflow for running tests
+- GitHub workflow for running tests and uploading artifacts
 - EditorConfig for code formatting
 - Renovate for dependencies update

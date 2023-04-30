@@ -9,6 +9,7 @@ version = "0.1-SNAPSHOT"
 
 val springBootPluginVersion: String by project
 val picocliSpringBootVersion: String by project
+val picocliVersion: String by project
 val lombokVersion: String by project
 val junitVersion: String by project
 val mockitoVersion: String by project
@@ -16,7 +17,9 @@ val mockitoVersion: String by project
 dependencies {
     implementation("org.springframework.boot:spring-boot-starter:${springBootPluginVersion}")
     implementation("info.picocli:picocli-spring-boot-starter:${picocliSpringBootVersion}")
+    implementation("info.picocli:picocli:${picocliVersion}")
     implementation("org.projectlombok:lombok:${lombokVersion}")
+    annotationProcessor("info.picocli:picocli-codegen:${picocliVersion}")
     annotationProcessor("org.projectlombok:lombok:${lombokVersion}")
     testImplementation("org.springframework.boot:spring-boot-starter-test:${springBootPluginVersion}")
     testImplementation("org.junit.jupiter:junit-jupiter:${junitVersion}")
@@ -30,6 +33,33 @@ application {
 java {
     sourceCompatibility = JavaVersion.VERSION_17
     targetCompatibility = JavaVersion.VERSION_17
+}
+
+distributions {
+    main {
+        contents {
+            from("${project.buildDir}/generated") {
+                include("myapplication")
+                into("completion")
+            }
+        }
+    }
+}
+
+val generateCompletion = task("generateCompletion", JavaExec::class) {
+    setMain("picocli.AutoComplete")
+    setClasspath(files(configurations.compileClasspath, configurations.annotationProcessor, sourceSets["main"].runtimeClasspath))
+    doFirst {
+        args("--force", "--name=myapplication", "--completionScript=${project.buildDir}/generated/myapplication", "org.grumpyf0x48.myapplication.commands.Completion")
+    }
+}
+
+tasks.distZip {
+    dependsOn(generateCompletion)
+}
+
+tasks.distTar {
+    dependsOn(generateCompletion)
 }
 
 tasks.withType<Test> {

@@ -1,4 +1,4 @@
-package org.grumpyf0x48.myapplication.services;
+package org.grumpyf0x48.spring_command_line_quickstart.services;
 
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;

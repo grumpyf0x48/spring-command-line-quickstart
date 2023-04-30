@@ -1,7 +1,7 @@
-package org.grumpyf0x48.myapplication;
+package org.grumpyf0x48.spring_command_line_quickstart;
 
 import lombok.RequiredArgsConstructor;
-import org.grumpyf0x48.myapplication.commands.Command;
+import org.grumpyf0x48.spring_command_line_quickstart.commands.Command;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.ExitCodeGenerator;
 import org.springframework.stereotype.Component;

@@ -28,7 +28,7 @@ dependencies {
 }
 
 application {
-    mainClass.set("org.grumpyf0x48.myapplication.Application")
+    mainClass.set("org.grumpyf0x48.spring_command_line_quickstart.Application")
 }
 
 java {
@@ -40,7 +40,7 @@ distributions {
     main {
         contents {
             from("${project.buildDir}/generated") {
-                include("myapplication")
+                include("spring_command_line_quickstart")
                 into("completion")
             }
         }
@@ -48,11 +48,11 @@ distributions {
     create("native") {
         contents {
             from("${project.buildDir}/generated") {
-                include("myapplication")
+                include("spring_command_line_quickstart")
                 into("completion")
             }
             from("${project.buildDir}/native/nativeCompile") {
-                include("myapplication")
+                include("spring_command_line_quickstart")
                 into("bin")
             }
         }
@@ -63,7 +63,7 @@ val generateCompletion = task("generateCompletion", JavaExec::class) {
     setMain("picocli.AutoComplete")
     setClasspath(files(configurations.compileClasspath, configurations.annotationProcessor, sourceSets["main"].runtimeClasspath))
     doFirst {
-        args("--force", "--name=myapplication", "--completionScript=${project.buildDir}/generated/myapplication", "org.grumpyf0x48.myapplication.commands.Completion")
+        args("--force", "--name=spring_command_line_quickstart", "--completionScript=${project.buildDir}/generated/spring_command_line_quickstart", "org.grumpyf0x48.spring_command_line_quickstart.commands.Completion")
     }
 }
 
@@ -97,7 +97,7 @@ graalvmNative {
             resources.autodetect()
         }
         named("main") {
-            imageName.set("myapplication")
+            imageName.set("spring_command_line_quickstart")
         }
     }
 }

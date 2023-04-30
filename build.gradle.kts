@@ -6,6 +6,7 @@ plugins {
     id("org.graalvm.buildtools.native")
 }
 
+group = "org.grumpyf0x48"
 version = "0.1-SNAPSHOT"
 
 val springBootPluginVersion: String by project

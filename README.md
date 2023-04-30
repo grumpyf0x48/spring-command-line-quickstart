@@ -15,3 +15,14 @@
 - GitHub workflow for running tests and uploading artifacts
 - EditorConfig for code formatting
 - Renovate for dependencies update
+
+## Run application
+
+```shell
+./gradlew run "--args=--help"
+
+> Task :run
+Usage: Command [-hV]
+  -h, --help      Show this help message and exit.
+  -V, --version   Print version information and exit.
+```

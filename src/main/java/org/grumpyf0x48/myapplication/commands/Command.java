@@ -9,7 +9,7 @@ import java.util.concurrent.Callable;
 
 @Component
 @RequiredArgsConstructor
-@CommandLine.Command
+@CommandLine.Command(name = "Command", version = "0.1-SNAPSHOT", mixinStandardHelpOptions = true)
 public class Command implements Callable<Integer> {
 
     private final Service service;

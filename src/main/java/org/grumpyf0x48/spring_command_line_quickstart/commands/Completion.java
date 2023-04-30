@@ -1,4 +1,4 @@
-package org.grumpyf0x48.myapplication.commands;
+package org.grumpyf0x48.spring_command_line_quickstart.commands;
 
 // This class is processed by Picocli Codegen
 // which needs a no-args constructor in Command class

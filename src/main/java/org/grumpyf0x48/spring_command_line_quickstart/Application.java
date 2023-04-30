@@ -1,4 +1,4 @@
-package org.grumpyf0x48.myapplication;
+package org.grumpyf0x48.spring_command_line_quickstart;
 
 import org.springframework.boot.Banner;
 import org.springframework.boot.SpringApplication;

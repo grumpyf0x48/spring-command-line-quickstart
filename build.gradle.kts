@@ -3,6 +3,7 @@ plugins {
     java
     id("org.springframework.boot")
     id("io.spring.dependency-management")
+    id("org.graalvm.buildtools.native")
 }
 
 version = "0.1-SNAPSHOT"
@@ -43,6 +44,18 @@ distributions {
             }
         }
     }
+    create("native") {
+        contents {
+            from("${project.buildDir}/generated") {
+                into("completion")
+                include("myapplication")
+            }
+            from("${project.buildDir}/native/nativeCompile") {
+                into("bin")
+                include("myapplication")
+            }
+        }
+    }
 }
 
 val generateCompletion = task("generateCompletion", JavaExec::class) {
@@ -59,6 +72,33 @@ tasks.distZip {
 
 tasks.distTar {
     dependsOn(generateCompletion)
+}
+
+tasks.getByName("nativeDistZip") {
+    dependsOn(generateCompletion)
+    dependsOn(tasks.nativeCompile)
+}
+
+tasks.getByName("nativeDistTar") {
+    dependsOn(generateCompletion)
+    dependsOn(tasks.nativeCompile)
+}
+
+tasks.getByName("installNativeDist") {
+    dependsOn(generateCompletion)
+    dependsOn(tasks.nativeCompile)
+}
+
+graalvmNative {
+    toolchainDetection.set(false)
+    binaries {
+        all {
+            resources.autodetect()
+        }
+        named("main") {
+            imageName.set("myapplication")
+        }
+    }
 }
 
 tasks.withType<Test> {

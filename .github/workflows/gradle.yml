@@ -9,6 +9,8 @@ on:
 env:
   JAVA_VERSION: '17'
   JAVA_DISTRIBUTION: 'temurin'
+  GRAALVM_VERSION: '22.3.1'
+  GRAALVM_COMPONENTS: 'native-image'
 
 permissions:
   contents: read
@@ -30,3 +32,25 @@ jobs:
         with:
           name: myapplication-${{ github.sha }}
           path: build/install/myapplication
+
+  build_native:
+    # disabled for now
+    if: ${{ true }}
+    name: Build and test native application
+    runs-on: ubuntu-22.04
+    steps:
+      - uses: actions/checkout@v3
+      - uses: graalvm/setup-graalvm@v1
+        with:
+          java-version: ${{ env.JAVA_VERSION }}
+          version: ${{ env.GRAALVM_VERSION }}
+          components: ${{ env.GRAALVM_COMPONENTS }}
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+      - uses: gradle/gradle-build-action@v2.4.2
+        with:
+          # no 'test' here. We trust the ones run in 'build'.
+          arguments: nativeDistZip installNativeDist
+      - uses: actions/upload-artifact@v3
+        with:
+          name: myapplication-native-${{ github.sha }}
+          path: build/install/myapplication-native

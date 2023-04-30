@@ -35,7 +35,7 @@ jobs:
 
   build_native:
     # disabled for now
-    if: ${{ false }}
+    if: ${{ true }}
     name: Build and test native application
     runs-on: ubuntu-22.04
     steps:
@@ -53,4 +53,4 @@ jobs:
       - uses: actions/upload-artifact@v3
         with:
           name: spring_command_line_quickstart_native_${{ github.sha }}
-          path: build/install/spring_command_line_quickstart_native
+          path: build/install/spring_command_line_quickstart-native

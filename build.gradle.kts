@@ -48,12 +48,12 @@ distributions {
     create("native") {
         contents {
             from("${project.buildDir}/generated") {
-                into("completion")
                 include("myapplication")
+                into("completion")
             }
             from("${project.buildDir}/native/nativeCompile") {
-                into("bin")
                 include("myapplication")
+                into("bin")
             }
         }
     }

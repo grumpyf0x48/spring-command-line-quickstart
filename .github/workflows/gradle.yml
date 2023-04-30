@@ -29,4 +29,9 @@ jobs:
       - uses: actions/upload-artifact@v3
         with:
           name: myapplication-${{ github.sha }}
-          path: build/install/myapplication
+          path: |
+            build/install/myapplication/bin/
+            build/install/myapplication/completion/
+            build/install/myapplication/lib/
+            build/install/myapplication/libs/
+          if-no-files-found: error

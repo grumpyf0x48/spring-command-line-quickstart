@@ -8,7 +8,6 @@ plugins {
 version = "0.1-SNAPSHOT"
 
 val springBootPluginVersion: String by project
-val picocliSpringBootVersion: String by project
 val picocliVersion: String by project
 val lombokVersion: String by project
 val junitVersion: String by project
@@ -16,7 +15,7 @@ val mockitoVersion: String by project
 
 dependencies {
     implementation("org.springframework.boot:spring-boot-starter:${springBootPluginVersion}")
-    implementation("info.picocli:picocli-spring-boot-starter:${picocliSpringBootVersion}")
+    implementation("info.picocli:picocli-spring-boot-starter:${picocliVersion}")
     implementation("info.picocli:picocli:${picocliVersion}")
     implementation("org.projectlombok:lombok:${lombokVersion}")
     annotationProcessor("info.picocli:picocli-codegen:${picocliVersion}")

@@ -27,10 +27,7 @@ jobs:
           check-for-updates: 'true'
       - uses: gradle/gradle-build-action@v2.4.2
         with:
-          # 'nativeTest' is disabled until
-          # https://github.com/spring-projects/spring-boot/issues/32195
-          # is solved
-          arguments: nativeDistZip installNativeDist
+          arguments: nativeTest nativeDistZip installNativeDist
       - uses: actions/upload-artifact@v3
         with:
           name: command_line_quickstart_native_${{ github.sha }}

@@ -91,6 +91,8 @@ tasks.getByName("installNativeDist") {
 }
 
 graalvmNative {
+    // Diable native tests until https://github.com/spring-projects/spring-boot/issues/32195 is solved
+    testSupport.set(false)
     toolchainDetection.set(false)
     binaries {
         all {

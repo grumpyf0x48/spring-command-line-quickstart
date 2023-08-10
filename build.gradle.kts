@@ -6,8 +6,8 @@ plugins {
     id("org.graalvm.buildtools.native")
 }
 
-group = "org.grumpyf0x48"
-version = "0.1-SNAPSHOT"
+val group:String by project
+val version:String by project
 
 val springBootPluginVersion: String by project
 val picocliVersion: String by project

@@ -6,8 +6,9 @@ plugins {
     id("org.graalvm.buildtools.native")
 }
 
-val group:String by project
-val version:String by project
+val group: String by project
+val version: String by project
+val javaVersion: String by project
 
 val springBootPluginVersion: String by project
 val picocliVersion: String by project

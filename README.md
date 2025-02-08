@@ -5,7 +5,7 @@
 
 **spring-command-line-quickstart** is a template repository to bootstrap a new Java command line application using:
 
-- Java 17
+- Java 21
 - Spring Boot
 - Lombok to ease dependencies injection
 - Gradle 8 with Kotlin DSL for build

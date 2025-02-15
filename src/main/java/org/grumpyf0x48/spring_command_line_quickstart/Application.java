@@ -4,18 +4,19 @@ import org.springframework.boot.Banner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.WebApplicationType;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.boot.builder.SpringApplicationBuilder;
 import org.springframework.context.ConfigurableApplicationContext;
 
 @SpringBootApplication
 public class Application {
 
     public static void main(String[] args) {
-        ConfigurableApplicationContext applicationContext = new SpringApplicationBuilder(Application.class)
-            .logStartupInfo(false)
-            .bannerMode(Banner.Mode.OFF)
-            .web(WebApplicationType.NONE)
-            .run(args);
+        SpringApplication springApplication = new SpringApplication(Application.class);
+        springApplication.setLogStartupInfo(false);
+        springApplication.setBannerMode(Banner.Mode.OFF);
+        springApplication.setWebApplicationType(WebApplicationType.NONE);
+
+        ConfigurableApplicationContext applicationContext = springApplication.run(args);
+
         int exitCode = SpringApplication.exit(applicationContext);
         System.exit(exitCode);
     }
